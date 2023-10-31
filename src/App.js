@@ -1,14 +1,21 @@
 function App() {
-  const name = "흥민";
+  const myStyle = {
+    color: "blue",
+    backgroundColor: "gold", // lowerCamelCase로 작성
+    fontSize: "70px",
+    textAlign: "center",
+  }; // js object
   return (
     <>
-      <h1>이름은 {name}</h1>
-      <h1>이름은 {"강인"}</h1>
-      <h1>이름은 희찬</h1>
-
-      {/* 같은 뜻 */}
-      <div className={"error"}>Lorem</div>
-      <div className="error">Lorem</div>
+      {/* style 속성은 객체로 줘야한다 */}
+      <div style={myStyle}>Lorem</div>
+      <hr />
+      <div
+        {/*바깥쪽 중괄호는 js 코드, 안쪽 중괄호는 js 객체 코드*/}
+        style={{ color: "red", backgroundColor: "yellow", fontSize: "70px" }}
+      >
+        ipsum
+      </div>
     </>
   );
 }

@@ -8,6 +8,7 @@ function App() {
       <br />
       <h2>hi react</h2>
       <MyComp />
+      <MyComp2 />
     </div>
   );
 }
@@ -37,4 +38,21 @@ function MyComp() {
 // {/*<h2>hello</h2>*/}
 // JSX에서 주석 사용법
 // {/* */}, 단축키는 똑같다
+function MyComp2() {
+  let name = "손흥민";
+  let age = 33;
+
+  // {} jsx에서 js 코드 작성하기 위한 기호
+  // 간단한 연산, 코드들 작성 가능
+  return (
+    <>
+      <h1>hello react</h1>
+      <h1>hello {name}</h1>
+      <h1>{age} years</h1>
+      <h1>{age * 2} double years</h1>
+      <h1>{name + "선수"}</h1>
+      {/* 그래서 주석이 이렇게 생김*/}
+    </>
+  );
+}
 export default App;

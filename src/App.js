@@ -1,20 +1,14 @@
 function App() {
-  // jsx가 js코드로 변환됨
-  // 따라서 js 키워드를 사용할 수 없다
+  const name = "흥민";
   return (
     <>
-      {/* class 속성은 className으로 작성해야 한다 */}
-      <div className={"header"}>Lorem</div>
-      <div className="error">Lorem ipsum dolor.</div>
-      {/* for 속성은 htmlFor로 작성 */}
-      <div>
-        <label htmlFor="nameInput">이름</label>
-        <input type="text" id="nameInput" />
-      </div>
-      <div>
-        <label htmlFor="ageInput"></label>
-        <input type="text" id="ageInput" />
-      </div>
+      <h1>이름은 {name}</h1>
+      <h1>이름은 {"강인"}</h1>
+      <h1>이름은 희찬</h1>
+
+      {/* 같은 뜻 */}
+      <div className={"error"}>Lorem</div>
+      <div className="error">Lorem</div>
     </>
   );
 }

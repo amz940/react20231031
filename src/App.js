@@ -1,16 +1,14 @@
-// export된 컴포넌트(변수, 함수, 객체 전부다 사용가능)를 import해서 사용
-import aaggee, { city, MyElem } from "./component/MyElem";
-import MyContainer, { country, person } from "./MyBox";
-
+// 2개의 파일에 객체명이 같을 시
+// as로 named export 값을 import 할 때 별칭을 줄 수 있다
+import MyBox, { address } from "./component/MyBox";
+import MyElem, { address as myAddress } from "./component/MyElem";
 function App() {
   return (
     <>
       <MyElem />
-      <MyContainer />
-      <h1>{city}</h1>
-      <h1>{aaggee}</h1>
-      <h1>{country}</h1>
-      <h1>{person}</h1>
+      <MyBox />
+      <h1>{address}</h1>
+      <h1>{myAddress}</h1>
     </>
   );
 }

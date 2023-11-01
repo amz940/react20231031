@@ -1,22 +1,30 @@
 function App() {
-  const myStyle = {
-    color: "blue",
-    backgroundColor: "gold", // lowerCamelCase로 작성
-    fontSize: "70px",
-    textAlign: "center",
-  }; // js object
   return (
     <>
-      {/* style 속성은 객체로 줘야한다 */}
-      <div style={myStyle}>Lorem</div>
-      <hr />
-      <div
-        {/*바깥쪽 중괄호는 js 코드, 안쪽 중괄호는 js 객체 코드*/}
-        style={{ color: "red", backgroundColor: "yellow", fontSize: "70px" }}
+      <h1
+        className={"note"}
+        style={{ backgroundColor: "blue", color: "white" }}
+        title={"제목 요소"}
       >
-        ipsum
-      </div>
+        Lorem
+      </h1>
+      <p title={"문단 요소"}>lorem ipsum dolor</p>
+      <MyComp title={"내 컴포넌트"} name="흥민" />
+      <MyComp title={"I am 컴포넌트에요"} name={"강인"} />
     </>
   );
 }
+
+// 함수 인자로 사용한 곳에서 넘긴 property들이 객체 형태로 담김
+// 예) title="내 컴포넌트" ==> {title: "내 컴포넌트"}식으로 객체로 담긴다
+// 예) title="내 컴포넌트" name ="흥민" => {title="내 컴포넌트" name ="흥민"}
+function MyComp(props) {
+  console.log("MyComp가 받은 property", props);
+  return (
+    <div>
+      <h1 title={props.title}>hello {props.name}</h1>
+    </div>
+  );
+}
+
 export default App;

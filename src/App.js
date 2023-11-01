@@ -1,14 +1,15 @@
-// 2개의 파일에 객체명이 같을 시
-// as로 named export 값을 import 할 때 별칭을 줄 수 있다
-import MyBox, { address } from "./component/MyBox";
-import MyElem, { address as myAddress } from "./component/MyElem";
+// style 적용 방법
+// 보통의 css 파일
+// css module 사용
+
+import { MyComp } from "./componant/MyComp";
+import { MyBox } from "./componant/MyBox";
+
 function App() {
   return (
     <>
-      <MyElem />
+      <MyComp />
       <MyBox />
-      <h1>{address}</h1>
-      <h1>{myAddress}</h1>
     </>
   );
 }

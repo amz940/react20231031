@@ -1,35 +1,33 @@
-import { Button, useToast } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
+import { ArrowRightIcon, EmailIcon } from "@chakra-ui/icons";
 
 function App() {
-  const toast = useToast();
   return (
     <>
-      <Button
-        onClick={() =>
-          toast({
-            title: "저장 완료",
-            description: "게시물이 저장되었습니다.",
-            duration: 2000,
-            position: "top",
-            isClosable: true,
-          })
-        }
-      >
-        토스트 띄우기
+      <Button>Lorem.</Button>
+      <Button colorScheme="green">Lorem.</Button>
+      <Button colorScheme="red">Dolore?</Button>
+      <Button colorScheme="orange">Vero?</Button>
+      <Button colorScheme="teal" size={"sm"}>
+        Aliquid.
       </Button>
-      <Button
-        onClick={() =>
-          toast({
-            title: "저장 실패",
-            description: "게시물이 저장되지 않았습니다.",
-            duration: 2000,
-            position: "top",
-            isClosable: true,
-            status: "error",
-          })
-        }
-      >
-        토스트로 에러 코드 띄우기
+      <Button colorScheme="facebook" size={"lg"}>
+        Veritatis?
+      </Button>
+      <Button colorScheme="whatsapp" variant={"outline"}>
+        Nulla?
+      </Button>
+      <Button colorScheme="messenger" variant={"ghost"}>
+        Nisi.
+      </Button>
+      <Button colorScheme="blackAlpha" variant={"link"}>
+        Repellat!
+      </Button>
+      <Button leftIcon={<EmailIcon />}>Quis?</Button>
+      <Button rightIcon={<ArrowRightIcon />}>Tenetur.</Button>
+      <Button isLoading>Velit!</Button>
+      <Button isLoading loadingText="지금, 곤란, 대기">
+        Unde.
       </Button>
     </>
   );

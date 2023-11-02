@@ -1,56 +1,108 @@
 import {
-  Button,
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-  Flex,
-  Heading,
+  Box,
   SimpleGrid,
+  Table,
+  Tbody,
+  Td,
+  Th,
+  Thead,
+  Tr,
 } from "@chakra-ui/react";
 
 function App() {
   return (
     <>
-      <SimpleGrid gap={3} columns={{ base: 1, md: 3, xl: 6, "2xl": 8 }}>
-        {/*Card*3>CardHeader>Heading[size="md"]>lorem2^^CardBody>lorem15^CardFooter>Button>lorem1*/}
-        <Card>
-          <CardHeader>
-            <Heading size="md">Lorem ipsum.</Heading>
-          </CardHeader>
-          <CardBody>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Consequatur doloremque possimus repellendus suscipit voluptatibus.
-            Odio!
-          </CardBody>
-          <CardFooter>
-            <Button>Lorem.</Button>
-          </CardFooter>
-        </Card>
-        <Card>
-          <CardHeader>
-            <Heading size="md">Aperiam, assumenda.</Heading>
-          </CardHeader>
-          <CardBody>
-            Alias aperiam architecto beatae ducimus, nostrum quas, quidem quis
-            recusandae, repellat sapiente sunt vel voluptates!
-          </CardBody>
-          <CardFooter>
-            <Button>Temporibus!</Button>
-          </CardFooter>
-        </Card>
-        <Card>
-          <CardHeader>
-            <Heading size="md">Ex, harum?</Heading>
-          </CardHeader>
-          <CardBody>
-            Adipisci aperiam est harum magnam maxime omnis quidem similique vel
-            voluptatem voluptatibus. Accusamus, mollitia, voluptatem?
-          </CardBody>
-          <CardFooter>
-            <Button>Ex.</Button>
-          </CardFooter>
-        </Card>
+      <SimpleGrid columns={1} gap={5}>
+        <Box>
+          {/*Table>Thead>Tr>Th*4>lorem1^^^Tbody>Tr*5>Td*4>lorem1*/}
+          <Table>
+            <Thead>
+              <Tr>
+                <Th>Lorem.</Th>
+                <Th>Soluta.</Th>
+                <Th>At.</Th>
+                <Th>Facilis.</Th>
+              </Tr>
+            </Thead>
+            <Tbody>
+              <Tr>
+                <Td>Lorem.</Td>
+                <Td>Laborum.</Td>
+                <Td>Atque!</Td>
+                <Td>Esse.</Td>
+              </Tr>
+              <Tr>
+                <Td>Lorem.</Td>
+                <Td>Excepturi!</Td>
+                <Td>Labore.</Td>
+                <Td>Et.</Td>
+              </Tr>
+              <Tr>
+                <Td>Lorem.</Td>
+                <Td>Repellendus?</Td>
+                <Td>Eos.</Td>
+                <Td>Dolor?</Td>
+              </Tr>
+              <Tr>
+                <Td>Lorem.</Td>
+                <Td>Nobis.</Td>
+                <Td>Repudiandae.</Td>
+                <Td>Dolorum!</Td>
+              </Tr>
+              <Tr>
+                <Td>Lorem.</Td>
+                <Td>Sequi.</Td>
+                <Td>Odio?</Td>
+                <Td>Maxime?</Td>
+              </Tr>
+            </Tbody>
+          </Table>
+        </Box>
+        {/*Box>Table[variant=striped]>Thead>Tr>Th*4>lorem1^^^Tbody>Tr*5>Td*4>lorem1*/}
+        <Box>
+          <Table variant="striped" colorScheme="red" size="lg">
+            <Thead>
+              <Tr>
+                <Th>Lorem.</Th>
+                <Th>Minima.</Th>
+                <Th>Provident?</Th>
+                <Th>Consequuntur?</Th>
+              </Tr>
+            </Thead>
+            <Tbody>
+              <Tr>
+                <Td>Lorem.</Td>
+                <Td>In.</Td>
+                <Td>Eos.</Td>
+                <Td>Id!</Td>
+              </Tr>
+              <Tr>
+                <Td>Lorem.</Td>
+                <Td>Voluptate.</Td>
+                <Td>Aliquid!</Td>
+                <Td>Delectus!</Td>
+              </Tr>
+              <Tr>
+                <Td>Lorem.</Td>
+                <Td>Repudiandae!</Td>
+                <Td>Accusamus!</Td>
+                <Td>Optio!</Td>
+              </Tr>
+              <Tr>
+                <Td>Lorem.</Td>
+                <Td>Facere?</Td>
+                <Td>Tenetur.</Td>
+                <Td>Delectus?</Td>
+              </Tr>
+              <Tr>
+                <Td>Lorem.</Td>
+                <Td>Mollitia!</Td>
+                <Td>Deleniti.</Td>
+                <Td>Minima.</Td>
+              </Tr>
+            </Tbody>
+          </Table>
+        </Box>
       </SimpleGrid>
     </>
   );

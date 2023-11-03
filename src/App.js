@@ -1,32 +1,41 @@
-import { Box, Button, Center } from "@chakra-ui/react";
+import { Button, Input } from "@chakra-ui/react";
+import { useState } from "react";
 
 function App() {
-  function handleClick(e) {
-    // event bubbling 막는 메소드
-    // bubbling 이란? 안쪽에 있는 메소드가 실행될때 그 메소드를 감싸고 있는 메소드들도 다같이 작동되는 현상
-    e.stopPropagation();
-    console.log(e.target.className);
+  // 상태(state)가 변경(이전 state와 달라짐)되면
+  // component를 다시 그림 ( re render )
+
+  // 상태(state) : react가 관리 하는 component의 값
+
+  // state를 얻는 방법
+  // useState();
+
+  // 배열을 리턴해준다
+  // index 0 : 현재 상태(state)
+  // index 1 : state를 변경할 수 있는 메소드
+  // const = 변경하지 않겠다, let = 변경 할 수 있다
+  // state를 사용할때 관습으로 [ method , setMethod ]로 쓴다
+  const [message, setMessage] = useState("");
+
+  // 상태가 바뀔 때에만 컴포넌트가 re render가 된다
+
+  let text = "초기 메시지";
+  function handleInputChange(e) {
+    text = e.target.value;
+    console.log("text", text);
+  }
+
+  function handleButtonClick(e) {
+    setMessage("바뀐 상태");
   }
   return (
-    <Center
-      onClick={handleClick}
-      className="outerBox"
-      w="200px"
-      h="200px"
-      bg="gold"
-    >
-      <Center
-        onClick={handleClick}
-        className="innerBox"
-        w="100px"
-        h="100px"
-        bg="blue"
-      >
-        <Button onClick={handleClick} className="button" colorScheme="yellow">
-          button
-        </Button>
-      </Center>
-    </Center>
+    <div>
+      <Input onChange={handleInputChange} />
+      <p>{text}</p>
+      <Button onClick={handleButtonClick}>상태 바꾸기</Button>
+      <Button onClick={() => setMessage("")}>빈 문자열로 바꾸기</Button>
+      <p>{message}</p>
+    </div>
   );
 }
 

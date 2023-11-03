@@ -1,22 +1,28 @@
-import { Input } from "@chakra-ui/react";
-
 function App(props) {
-  let text = "initial text";
-  function handleChange(e) {
-    // console.log("인풋값이 변경됨");
-    console.log(e.target.value);
-
-    // text값 변경되지 않는다
-    text = e.target.value;
-    console.log("text", text);
+  // prevent : 막다. 예방하다, 방지하다
+  function handleClick(e) {
+    // preventDefault : 원래 해야 하는 일을 취소하고 싶을때 사용
+    e.preventDefault();
+    console.log("다른 일을 시킴");
   }
 
-  // onChange = 인풋에 입력되는 값 표현
+  function handleSubmit(e) {
+    // 기본 기능 취소
+    e.preventDefault();
+    console.log("다른 일을 시킴");
+  }
+
   return (
     <div>
-      <p>{text}</p>
-      <Input onChange={handleChange} />
-      <Input onChange={handleChange} />
+      <a href="https://www.naver.com" onClick={handleClick}>
+        네이버
+      </a>
+      <div>
+        <form action="https://search.daum.net/search" onSubmit={handleSubmit}>
+          <input type="text" name="q" />
+          <button>검색</button>
+        </form>
+      </div>
     </div>
   );
 }

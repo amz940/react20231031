@@ -12,12 +12,12 @@ function App(props) {
     console.log(number + "번째 버튼 클릭됨");
   }
 
-  let func3 = () => {
-    handleButtonClick(3);
-  };
-  let func4 = () => {
-    handleButtonClick(4);
-  };
+  // let func3 = () => {
+  //   handleButtonClick(3);
+  // };
+  // let func4 = () => {
+  //   handleButtonClick(4);
+  // };
 
   return (
     <div>

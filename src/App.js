@@ -1,30 +1,30 @@
-import { findAllByDisplayValue } from "@testing-library/react";
 import { Button } from "@chakra-ui/react";
 
 function App() {
   function func1() {
-    console.log("func1 실행됨");
+    console.log("func1 실행");
   }
+
+  let func2 = () => {
+    console.log("arrow function 실행 !!!");
+  };
 
   return (
     <div>
-      <MyComp to={["https://www.naver.com"]} someProp={func1}></MyComp>
+      <MyComp executeClick={func1}>Button1</MyComp>
+      <MyComp executeClick={func2}>Button2</MyComp>
+      <MyComp
+        executeClick={() => {
+          console.log("arrow function 실행 222");
+        }}
+      >
+        Button3
+      </MyComp>
     </div>
   );
 }
 
-function MyComp({ to, someProp }) {
-  someProp();
-
-  return (
-    <>
-      <div>
-        <a href={to[0]}>link!!</a>
-      </div>
-      <div>
-        <Button onClick={someProp}>버튼</Button>
-      </div>
-    </>
-  );
+function MyComp({ children, executeClick }) {
+  return <Button onClick={executeClick}>{children}</Button>;
 }
 export default App;

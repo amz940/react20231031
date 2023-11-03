@@ -20,6 +20,9 @@ function App() {
       >
         Button3
       </MyComp>
+      <MyComp executeClick={() => console.log("arrow function 실행333")}>
+        Button4
+      </MyComp>
     </div>
   );
 }

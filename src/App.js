@@ -7,6 +7,7 @@ function App(props) {
   const isOdd = number % 2 == 1;
 
   function handleInputChange(e) {
+    // Number는 문자열을 숫자로 형변환 해준다
     setNumber(Number(e.target.value));
   }
 

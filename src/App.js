@@ -1,41 +1,22 @@
 import { Button } from "@chakra-ui/react";
 
 function App(props) {
-  function handleClick1() {
-    console.log("버튼 클릭됨");
+  // 브라우저가 이벤트 핸들러 메소드에
+  // event 객체를 매개값으로 넣어준다 보통 줄여서 e로 넣는다
+  function handleClick(event) {
+    // console.log(event);
+    console.log(event.target);
+    // console.log(event.target.className);
+    // console.log(event.target.type);
   }
-  function handleClick2() {
-    console.log("2번 버튼 클릭됨");
-  }
-
-  function handleButtonClick(number) {
-    console.log(number + "번째 버튼 클릭됨");
-  }
-
-  // let func3 = () => {
-  //   handleButtonClick(3);
-  // };
-  // let func4 = () => {
-  //   handleButtonClick(4);
-  // };
 
   return (
     <div>
-      <Button onClick={handleClick1}>첫번째버튼</Button>
-      <Button onClick={handleClick2}>두번째버튼</Button>
-      <Button
-        onClick={() => {
-          handleButtonClick(3);
-        }}
-      >
-        세번째버튼
+      <Button colorScheme="orange" onClick={handleClick}>
+        button1
       </Button>
-      <Button
-        onClick={() => {
-          handleButtonClick(4);
-        }}
-      >
-        네번째버튼
+      <Button colorScheme="blue" onClick={handleClick}>
+        button2
       </Button>
     </div>
   );

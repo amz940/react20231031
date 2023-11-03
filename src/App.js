@@ -5,6 +5,8 @@ function App(props) {
   function handleChange(e) {
     // console.log("인풋값이 변경됨");
     console.log(e.target.value);
+
+    // text값 변경되지 않는다
     text = e.target.value;
     console.log("text", text);
   }

@@ -1,34 +1,38 @@
-import { useState } from "react";
-import { Box, Button, Text } from "@chakra-ui/react";
+import React from "react";
+import { Box, List, ListItem } from "@chakra-ui/react";
 
 function App(props) {
-  // set ... 메소드로 상태 변경 할 수 있다
-  // 상태가 같은 지 아닌 지 판단해서 re-render 결정한다
+  const arr = ["pizza", "돈까스", "햄버거", "김치찌개"];
+  const arr2 = ["손흥민", "이강인", "김민재"];
+  const arr3 = ["라때", "아아", "디카페인"];
 
-  const [number, setNumber] = useState(0);
-  const [numberObject, setNumberObject] = useState({ number: 0 });
-
-  function handleNumberObjectChange() {
-    // 틀린 코드 참조값을 들고 오는거기 때문에 틀리다
-    // numberObject.number = numberObject.number + 1;
-    // setNumberObject(numberObject);
-
-    // 객체를 사용 할려면 새 객체를 복사해서 사용해야함
-    // boolean, number ,string을 제외한 나머지 property를 사용할 때는 복사해서 사용
-    const newNumberObject = { ...numberObject };
-    newNumberObject.number = newNumberObject.number + 1;
-    setNumberObject(newNumberObject);
-  }
+  const Items = arr.map((item) => <ListItem>{item}</ListItem>);
+  // let map = arr2.map((abc) => <ListItem>{abc}</ListItem>);
 
   return (
     <div>
-      <Box>
-        <Button onClick={() => setNumber(number + 1)}>number 변경</Button>
-        <Text>{number}</Text>
+      <Box mb={3}>
+        {/*<List>*/}
+        {/*  <ListItem{arr[0]}></ListItem>*/}
+        {/*  <ListItem{arr[1]}></ListItem>*/}
+        {/*  <ListItem{arr[2]}></ListItem>*/}
+        {/*  <ListItem{arr[3]}></ListItem>*/}
+        {/*</List>*/}
+        <List>{Items}</List>
       </Box>
-      <Box>
-        <Button onClick={handleNumberObjectChange}>number 객체 변경</Button>
-        <Text>{numberObject.number}</Text>
+      <Box mb={3}>
+        <List>
+          {arr2.map((abc) => (
+            <ListItem>{abc}</ListItem>
+          ))}
+        </List>
+      </Box>
+      <Box mb={3}>
+        <List>
+          {arr3.map((e) => (
+            <ListItem>{e}</ListItem>
+          ))}
+        </List>
       </Box>
     </div>
   );

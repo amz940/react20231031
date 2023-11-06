@@ -5,8 +5,15 @@ function App(props) {
   const arr = ["pizza", "돈까스", "햄버거", "김치찌개"];
   const arr2 = ["손흥민", "이강인", "김민재"];
   const arr3 = ["라때", "아아", "디카페인"];
+  const arr4 = [
+    { id: 0, name: "라떼" },
+    { id: 1, name: "에스프레소" },
+    { id: 2, name: "카푸치노" },
+  ];
 
-  const Items = arr.map((item) => <ListItem>{item}</ListItem>);
+  const Items = arr.map((item, index) => (
+    <ListItem key={index}>{item}</ListItem>
+  ));
   // let map = arr2.map((abc) => <ListItem>{abc}</ListItem>);
 
   return (
@@ -22,15 +29,15 @@ function App(props) {
       </Box>
       <Box mb={3}>
         <List>
-          {arr2.map((abc) => (
-            <ListItem>{abc}</ListItem>
+          {arr2.map((abc, index) => (
+            <ListItem key={index}>{abc}</ListItem>
           ))}
         </List>
       </Box>
       <Box mb={3}>
         <List>
-          {arr3.map((e) => (
-            <ListItem>{e}</ListItem>
+          {arr3.map((e, i) => (
+            <ListItem key={i}>{e}</ListItem>
           ))}
         </List>
       </Box>
